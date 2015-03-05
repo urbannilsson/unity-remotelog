@@ -98,6 +98,7 @@ GameObject:
   - 223: {fileID: 172528353}
   - 114: {fileID: 172528352}
   - 114: {fileID: 172528351}
+  - 114: {fileID: 172528354}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -155,7 +156,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 1
+  m_MatchWidthOrHeight: .5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -177,6 +178,17 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!114 &172528354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 172528349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b57f865fbe0549e4884d369e89df2d13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &173825845
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,7 +201,7 @@ GameObject:
   - 114: {fileID: 173825848}
   - 114: {fileID: 173825847}
   m_Layer: 5
-  m_Name: Button 2
+  m_Name: ButtonError
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -251,7 +263,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 173825848}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 172528354}
+        m_MethodName: DebugError
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &173825848
@@ -398,8 +422,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 282.000031, y: -300.000122}
-  m_SizeDelta: {x: 564, y: 600}
+  m_AnchoredPosition: {x: 274, y: -438.01001}
+  m_SizeDelta: {x: 548, y: 876.030029}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &691058330
 MonoBehaviour:
@@ -436,7 +460,7 @@ GameObject:
   - 114: {fileID: 868404510}
   - 114: {fileID: 868404509}
   m_Layer: 5
-  m_Name: Button
+  m_Name: ButtonLog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -480,7 +504,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 868404510}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 172528354}
+        m_MethodName: DebugLog
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &868404510
@@ -745,7 +781,7 @@ GameObject:
   - 114: {fileID: 1685223373}
   - 114: {fileID: 1685223372}
   m_Layer: 5
-  m_Name: Button 1
+  m_Name: ButtonWarning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -807,7 +843,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1685223373}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 172528354}
+        m_MethodName: DebugWarning
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1685223373
@@ -930,7 +978,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00d6284ebd8d778478a957e3354c0a49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _remoteHost: http://192.168.1.111:9292
+  _remoteHost: http://192.168.101.70:9292
 --- !u!4 &1819247515
 Transform:
   m_ObjectHideFlags: 0
