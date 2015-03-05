@@ -78,6 +78,7 @@ public class HttpServer
 				break;
 		}
 
+		// Send 0 response
 		context.Response.ContentLength64 = 0;
 		context.Response.OutputStream.Close();
 	}

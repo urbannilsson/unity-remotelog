@@ -1,13 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using System.Text;
 
 public class RemoteLog : MonoBehaviour
 {
 	[SerializeField]
 	private string _remoteHost = "http://192.168.101.70:9292";
-
-	private HttpClient _httpClient = new HttpClient();
 
 	public void Awake()
 	{
@@ -37,6 +36,16 @@ public class RemoteLog : MonoBehaviour
 				break;
 		}
 
-		_httpClient.PostString(url, string.Format("[{0}] - {1}", SystemInfo.deviceModel, condition));
-	}	
+		StartCoroutine(SendLogToHost(url, string.Format("[{0}] - {1}", SystemInfo.deviceModel, condition)));		
+	}
+
+	private IEnumerator SendLogToHost(string url, string message)
+	{
+		var data = Encoding.UTF8.GetBytes(message);
+
+		using (WWW www = new WWW(url, data))
+		{
+			yield return www;
+		}
+	}
 }

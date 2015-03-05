@@ -17,4 +17,12 @@ public class TestScene : MonoBehaviour
 	{
 		Debug.LogError("This is an error message.");
 	}
+
+	public void SpamLog()
+	{
+		for (int i = 0; i < 100; i++)
+		{
+			Debug.Log("Spam!, " + i);
+		}
+	}
 }
