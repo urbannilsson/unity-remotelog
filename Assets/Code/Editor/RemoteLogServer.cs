@@ -12,7 +12,14 @@ public class RemoteLogServer
 
 	static RemoteLogServer()
 	{
+		EditorApplication.update += Update;
+	}
+
+	private static void Update()
+	{
 		Start();
+
+		EditorApplication.update -= Update;
 	}
 
 	[MenuItem("RemoteLog/Start")]
