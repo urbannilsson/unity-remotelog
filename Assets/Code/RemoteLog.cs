@@ -36,10 +36,10 @@ public class RemoteLog : MonoBehaviour
 				break;
 		}
 
-		StartCoroutine(SendLogToHost(url, string.Format("[{0}] - {1}", SystemInfo.deviceModel, condition)));		
+		StartCoroutine(PostMessageCoroutine(url, string.Format("[{0}] - {1}", SystemInfo.deviceModel, condition)));		
 	}
 
-	private IEnumerator SendLogToHost(string url, string message)
+	private IEnumerator PostMessageCoroutine(string url, string message)
 	{
 		var data = Encoding.UTF8.GetBytes(message);
 
